@@ -10,11 +10,11 @@ var paddleWidth = 75
 var paddleX = (canvas.width - paddleWidth) / 2
 var rightPressed = false
 var leftPressed = false
-var brickRowCount = 5
-var brickColumnCount = 3
+var brickRowCount = 13
+var brickColumnCount = 5
 var brickWidth = 75
-var brickHeight = 20
-var brickPadding = 10
+var brickHeight = 30
+var brickPadding = 5
 var brickOffsetTop = 30
 var brickOffsetLeft = 30
 var score = 0
@@ -153,13 +153,13 @@ function draw() {
   }
 
   if (rightPressed && paddleX < canvas.width - paddleWidth) {
-    paddleX += 7
+    paddleX += 20
   } else if (leftPressed && paddleX > 0) {
-    paddleX -= 7
+    paddleX -= 20
   }
 
-  x += dx
-  y += dy
+  x += 3 * dx
+  y += 3 * dy
   requestAnimationFrame(draw)
 }
 
